@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Percentage Calculator - 3-in-1 Free Online Percent Calculator | QuickToolHub</title>
+  <meta name="description" content="Calculate percentage of a number, find what percent one number is of another, and compute percentage increase or decrease with formula steps and division-by-zero validation."/>
+  <link rel="canonical" href="https://quicktoolhub.com/tools/percentage-calculator/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Percentage Calculator - Quick & Accurate Percentages"/>
+  <meta property="og:description" content="Compute discounts, percentage shares, relative increases, and decreases in seconds."/>
+  <meta property="og:url" content="https://quicktoolhub.com/tools/percentage-calculator/"/>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Custom CSS Design Tokens -->
+  <link rel="stylesheet" href="../../assets/css/styles.css"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4F46E5",
+            "primary-container": "#4338CA",
+            secondary: "#0EA5E9",
+            "on-surface": "#0F172A",
+            "on-surface-variant": "#334155"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#FAF8FF] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F8FAFC] antialiased selection:bg-[#4F46E5] selection:text-white relative min-h-screen flex flex-col">
+
+  <!-- Ambient background mesh gradients -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-[15%] left-1/2 -translate-x-1/2 w-[1200px] h-[650px] mesh-glow-hero rounded-full blur-3xl opacity-70"></div>
+    <div class="absolute top-[35%] -right-40 w-[600px] h-[600px] mesh-glow-accent rounded-full blur-3xl opacity-60"></div>
+  </div>
+
+  <!-- Reusable Header Mount -->
+  <div id="header-container"></div>
+
+  <!-- Main Content -->
+  <main class="relative z-10 w-full pt-16 flex-1">
+    <!-- Breadcrumbs -->
+    <div id="breadcrumb-container"></div>
+
+    <!-- Tool Header -->
+    <section class="max-w-[1280px] mx-auto px-4 md:px-8 py-6">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-blue-500/25">
+          <span class="material-symbols-outlined text-[26px]">percent</span>
+        </div>
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200/50 dark:border-blue-800">Calculators</span>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Percentage Calculator</h1>
+        </div>
+      </div>
+      <p class="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
+        Quickly solve everyday percentage equations with step-by-step arithmetic breakdowns. Calculate discounts, proportions, and percentage change.
+      </p>
+    </section>
+
+    <!-- Ad Leaderboard -->
+    <div id="ad-leaderboard-container"></div>
+
+    <!-- Working Workbench -->
+    <section class="max-w-[1280px] mx-auto px-4 md:px-8 py-4">
+      <div class="glass-card rounded-3xl p-6 md:p-8 border border-white dark:border-slate-800 shadow-xl shadow-indigo-500/10">
+        
+        <!-- Mode Selector Tabs -->
+        <div class="flex flex-wrap gap-2 p-1.5 bg-slate-100/70 dark:bg-slate-800/70 rounded-2xl mb-8 border border-white/60 dark:border-slate-700">
+          <button id="tabMode1" type="button" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 shadow-sm">
+            What is X% of Y?
+          </button>
+          <button id="tabMode2" type="button" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+            X is what % of Y?
+          </button>
+          <button id="tabMode3" type="button" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+            % Increase or Decrease
+          </button>
+          <button id="tabMode4" type="button" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+            Add or Subtract %
+          </button>
+        </div>
+
+        <!-- MODE 1: What is X% of Y? -->
+        <div id="panelMode1" class="mode-panel">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-4">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">What is</label>
+              <div class="relative">
+                <input id="m1_x" type="number" step="any" value="15" class="w-full pr-8 pl-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-base focus:ring-2 focus:ring-indigo-500 font-semibold" placeholder="e.g. 15" />
+                <span class="absolute right-3 top-3.5 text-slate-400 font-bold text-sm">%</span>
+              </div>
+            </div>
+
+            <div class="md:col-span-1 text-center font-bold text-slate-400 text-sm">of</div>
+
+            <div class="md:col-span-4">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Total Number</label>
+              <input id="m1_y" type="number" step="any" value="250" class="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-base focus:ring-2 focus:ring-indigo-500 font-semibold" placeholder="e.g. 250" />
+            </div>
+
+            <div class="md:col-span-3">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Result</label>
+              <div class="p-3 bg-indigo-50/80 dark:bg-indigo-950/40 rounded-xl border border-indigo-200/60 dark:border-indigo-800 text-center">
+                <span id="m1_result" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400">37.5</span>
+              </div>
+            </div>
+          </div>
+          <div id="m1_formula" class="mt-4 p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl text-xs font-mono text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+            Formula: (15 ÷ 100) × 250 = 37.5
+          </div>
+        </div>
+
+        <!-- MODE 2: X is what % of Y? -->
+        <div id="panelMode2" class="mode-panel hidden">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-4">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Number (Part)</label>
+              <input id="m2_x" type="number" step="any" value="45" class="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-base focus:ring-2 focus:ring-indigo-500 font-semibold" placeholder="e.g. 45" />
+            </div>
+
+            <div class="md:col-span-1 text-center font-bold text-slate-400 text-sm">is what % of</div>
+
+            <div class="md:col-span-4">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Total Number (Whole)</label>
+              <input id="m2_y" type="number" step="any" value="180" class="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-base focus:ring-2 focus:ring-indigo-500 font-semibold" placeholder="e.g. 180" />
+            </div>
+
+            <div class="md:col-span-3">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Result</label>
+              <div class="p-3 bg-sky-50/80 dark:bg-sky-950/40 rounded-xl border border-sky-200/60 dark:border-sky-800 text-center">
+                <span id="m2_result" class="text-2xl font-extrabold text-sky-600 dark:text-sky-400">25%</span>
+              </div>
+            </div>
+          </div>
+          <div id="m2_formula" class="mt-4 p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl text-xs font-mono text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+            Formula: (45 ÷ 180) × 100 = 25%
+          </div>
+        </div>
+
+        <!-- MODE 3: % Increase or Decrease -->
+        <div id="panelMode3" class="mode-panel hidden">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-4">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Initial Value</label>
+              <input id="m3_x" type="number" step="any" value="80" class="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-base focus:ring-2 focus:ring-indigo-500 font-semibold" placeholder="e.g. 80" />
+            </div>
+
+            <div class="md:col-span-1 text-center font-bold text-slate-400 text-sm">to</div>
+
+            <div class="md:col-span-4">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Final Value</label>
+              <input id="m3_y" type="number" step="any" value="100" class="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-base focus:ring-2 focus:ring-indigo-500 font-semibold" placeholder="e.g. 100" />
+            </div>
+
+            <div class="md:col-span-3">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Change</label>
+              <div class="p-3 bg-emerald-50/80 dark:bg-emerald-950/40 rounded-xl border border-emerald-200/60 dark:border-emerald-800 text-center">
+                <span id="m3_result" class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">+25%</span>
+              </div>
+            </div>
+          </div>
+          <div id="m3_formula" class="mt-4 p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl text-xs font-mono text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+            Formula: ((100 - 80) ÷ 80) × 100 = +25% (Increase)
+          </div>
+        </div>
+
+        <!-- MODE 4: Add or Subtract % -->
+        <div id="panelMode4" class="mode-panel hidden">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-3">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Original Number</label>
+              <input id="m4_base" type="number" step="any" value="100" class="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-base focus:ring-2 focus:ring-indigo-500 font-semibold" placeholder="e.g. 100" />
+            </div>
+
+            <div class="md:col-span-2">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Action</label>
+              <select id="m4_action" class="w-full px-3 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-indigo-500 font-semibold">
+                <option value="add">+ Add</option>
+                <option value="subtract">- Subtract</option>
+              </select>
+            </div>
+
+            <div class="md:col-span-3">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Percentage</label>
+              <div class="relative">
+                <input id="m4_pct" type="number" step="any" value="20" class="w-full pr-8 pl-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white text-base focus:ring-2 focus:ring-indigo-500 font-semibold" placeholder="e.g. 20" />
+                <span class="absolute right-3 top-3.5 text-slate-400 font-bold text-sm">%</span>
+              </div>
+            </div>
+
+            <div class="md:col-span-4">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">Final Value</label>
+              <div class="p-3 bg-purple-50/80 dark:bg-purple-950/40 rounded-xl border border-purple-200/60 dark:border-purple-800 text-center">
+                <span id="m4_result" class="text-2xl font-extrabold text-purple-600 dark:text-purple-400">120</span>
+              </div>
+            </div>
+          </div>
+          <div id="m4_formula" class="mt-4 p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl text-xs font-mono text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+            Formula: 100 + (100 × 20%) = 120
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Instructions & Mathematical Formulas -->
+    <section class="max-w-[1280px] mx-auto px-4 md:px-8 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <div class="lg:col-span-8 space-y-8">
+          <!-- Step-by-Step Instructions -->
+          <div class="glass-card rounded-2xl p-6 sm:p-8 border border-white dark:border-slate-800">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-indigo-600">checklist</span>
+              How to Use the Percentage Calculator
+            </h2>
+            <ol class="space-y-4 text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 font-bold flex items-center justify-center shrink-0 text-xs border border-indigo-200 dark:border-indigo-800">1</span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white">Choose Your Mode:</strong> Pick one of the 4 tabs depending on whether you need a discount calculation, relative percentage share, or price markup.
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 font-bold flex items-center justify-center shrink-0 text-xs border border-indigo-200 dark:border-indigo-800">2</span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white">Input Values:</strong> Type your numerical parameters. Decimal values are fully supported.
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 font-bold flex items-center justify-center shrink-0 text-xs border border-indigo-200 dark:border-indigo-800">3</span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white">Instant Answers &amp; Steps:</strong> The answer and formula step breakdown update live as you type.
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Formula Explanations -->
+          <div class="glass-card rounded-2xl p-6 sm:p-8 border border-white dark:border-slate-800">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sky-500">functions</span>
+              Standard Percentage Formulas
+            </h2>
+            <div class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700">
+                <strong>Finding X% of Y:</strong> <code>Result = (X / 100) × Y</code>
+              </div>
+              <div class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700">
+                <strong>Finding Percentage Share:</strong> <code>Percentage (%) = (Part / Whole) × 100</code>
+              </div>
+              <div class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700">
+                <strong>Percentage Change:</strong> <code>Change (%) = ((Final - Initial) / Initial) × 100</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-6">
+          <div class="glass-card rounded-2xl p-6 border border-white dark:border-slate-800">
+            <h2 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-indigo-600">help</span>
+              Frequently Asked Questions
+            </h2>
+            <div class="space-y-4 text-xs text-slate-600 dark:text-slate-300">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white mb-1">How does it handle division by zero?</h3>
+                <p class="leading-relaxed">If the denominator or base is set to 0, the tool gracefully catches it and displays "Cannot divide by 0" rather than crashing or showing NaN.</p>
+              </div>
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800">
+                <h3 class="font-bold text-slate-900 dark:text-white mb-1">Can I calculate negative percentages?</h3>
+                <p class="leading-relaxed">Yes! Percentage decreases automatically show a minus sign (e.g. -20% discount) with clear green/red change context.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Related Tools -->
+    <div id="related-tools-container"></div>
+  </main>
+
+  <!-- Reusable Footer Mount -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/config.js"></script>
+  <script src="../../assets/js/tools-data.js"></script>
+  <script src="../../assets/js/components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Components Mount
+      window.QuickToolHub.components.renderHeader('all-tools', '../../');
+      window.QuickToolHub.components.renderFooter('../../');
+      window.QuickToolHub.components.renderSearchModal('../../');
+      
+      document.getElementById('breadcrumb-container').innerHTML = window.QuickToolHub.components.renderBreadcrumbs([
+        { label: 'Calculators', url: '../../categories/index.html?cat=calc' },
+        { label: 'Percentage Calculator', url: '#' }
+      ], '../../');
+
+      document.getElementById('ad-leaderboard-container').innerHTML = window.QuickToolHub.components.renderAdSenseBanner('leaderboard');
+      document.getElementById('related-tools-container').innerHTML = window.QuickToolHub.components.renderRelatedTools('percentage-calculator', '../../', 3);
+
+      // Tabs
+      const tabs = [
+        { btn: document.getElementById('tabMode1'), panel: document.getElementById('panelMode1') },
+        { btn: document.getElementById('tabMode2'), panel: document.getElementById('panelMode2') },
+        { btn: document.getElementById('tabMode3'), panel: document.getElementById('panelMode3') },
+        { btn: document.getElementById('tabMode4'), panel: document.getElementById('panelMode4') }
+      ];
+
+      tabs.forEach((tab, index) => {
+        tab.btn.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.panel.classList.add('hidden');
+            t.btn.classList.remove('bg-white', 'dark:bg-slate-700', 'text-indigo-600', 'dark:text-indigo-400', 'shadow-sm');
+            t.btn.classList.add('text-slate-600', 'dark:text-slate-300');
+          });
+          tab.panel.classList.remove('hidden');
+          tab.btn.classList.add('bg-white', 'dark:bg-slate-700', 'text-indigo-600', 'dark:text-indigo-400', 'shadow-sm');
+          tab.btn.classList.remove('text-slate-600', 'dark:text-slate-300');
+        });
+      });
+
+      // Mode 1: What is X% of Y?
+      const m1_x = document.getElementById('m1_x');
+      const m1_y = document.getElementById('m1_y');
+      const m1_res = document.getElementById('m1_result');
+      const m1_form = document.getElementById('m1_formula');
+
+      function calcM1() {
+        const x = parseFloat(m1_x.value);
+        const y = parseFloat(m1_y.value);
+        if (isNaN(x) || isNaN(y)) {
+          m1_res.textContent = '—';
+          m1_form.textContent = 'Please enter valid numbers.';
+          return;
+        }
+        const ans = (x / 100) * y;
+        const rounded = Number.isInteger(ans) ? ans : parseFloat(ans.toFixed(4));
+        m1_res.textContent = rounded;
+        m1_form.textContent = `Formula: (${x} ÷ 100) × ${y} = ${rounded}`;
+      }
+      m1_x.addEventListener('input', calcM1);
+      m1_y.addEventListener('input', calcM1);
+
+      // Mode 2: X is what % of Y?
+      const m2_x = document.getElementById('m2_x');
+      const m2_y = document.getElementById('m2_y');
+      const m2_res = document.getElementById('m2_result');
+      const m2_form = document.getElementById('m2_formula');
+
+      function calcM2() {
+        const x = parseFloat(m2_x.value);
+        const y = parseFloat(m2_y.value);
+        if (isNaN(x) || isNaN(y)) {
+          m2_res.textContent = '—';
+          m2_form.textContent = 'Please enter valid numbers.';
+          return;
+        }
+        if (y === 0) {
+          m2_res.textContent = 'Error';
+          m2_form.textContent = 'Division by zero is not mathematically defined.';
+          return;
+        }
+        const ans = (x / y) * 100;
+        const rounded = Number.isInteger(ans) ? ans : parseFloat(ans.toFixed(2));
+        m2_res.textContent = `${rounded}%`;
+        m2_form.textContent = `Formula: (${x} ÷ ${y}) × 100 = ${rounded}%`;
+      }
+      m2_x.addEventListener('input', calcM2);
+      m2_y.addEventListener('input', calcM2);
+
+      // Mode 3: % Increase/Decrease
+      const m3_x = document.getElementById('m3_x');
+      const m3_y = document.getElementById('m3_y');
+      const m3_res = document.getElementById('m3_result');
+      const m3_form = document.getElementById('m3_formula');
+
+      function calcM3() {
+        const x = parseFloat(m3_x.value);
+        const y = parseFloat(m3_y.value);
+        if (isNaN(x) || isNaN(y)) {
+          m3_res.textContent = '—';
+          m3_form.textContent = 'Please enter valid numbers.';
+          return;
+        }
+        if (x === 0) {
+          m3_res.textContent = 'Error';
+          m3_form.textContent = 'Initial value cannot be zero when computing percentage change.';
+          return;
+        }
+        const diff = y - x;
+        const change = (diff / Math.abs(x)) * 100;
+        const rounded = Number.isInteger(change) ? change : parseFloat(change.toFixed(2));
+        const prefix = change > 0 ? '+' : '';
+        const direction = change > 0 ? 'Increase' : (change < 0 ? 'Decrease' : 'No Change');
+        m3_res.textContent = `${prefix}${rounded}%`;
+        m3_form.textContent = `Formula: ((${y} - ${x}) ÷ ${Math.abs(x)}) × 100 = ${prefix}${rounded}% (${direction})`;
+      }
+      m3_x.addEventListener('input', calcM3);
+      m3_y.addEventListener('input', calcM3);
+
+      // Mode 4: Add / Subtract %
+      const m4_base = document.getElementById('m4_base');
+      const m4_act = document.getElementById('m4_action');
+      const m4_pct = document.getElementById('m4_pct');
+      const m4_res = document.getElementById('m4_result');
+      const m4_form = document.getElementById('m4_formula');
+
+      function calcM4() {
+        const b = parseFloat(m4_base.value);
+        const p = parseFloat(m4_pct.value);
+        const act = m4_act.value;
+        if (isNaN(b) || isNaN(p)) {
+          m4_res.textContent = '—';
+          m4_form.textContent = 'Please enter valid numbers.';
+          return;
+        }
+        const delta = (p / 100) * b;
+        const finalVal = act === 'add' ? b + delta : b - delta;
+        const rounded = Number.isInteger(finalVal) ? finalVal : parseFloat(finalVal.toFixed(4));
+        m4_res.textContent = rounded;
+        m4_form.textContent = `Formula: ${b} ${act === 'add' ? '+' : '-'} (${p}% of ${b} = ${delta}) = ${rounded}`;
+      }
+      m4_base.addEventListener('input', calcM4);
+      m4_pct.addEventListener('input', calcM4);
+      m4_act.addEventListener('change', calcM4);
+
+      // Initial runs
+      calcM1();
+      calcM2();
+      calcM3();
+      calcM4();
+    });
+  </script>
+</body>
+</html>

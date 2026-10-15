@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>About Us - Our Mission & Privacy Promise | QuickToolHub</title>
+  <meta name="description" content="Learn about QuickToolHub, our mission to create lightning-fast, privacy-first online tools for everyday productivity, and how our client-side architecture keeps your data safe."/>
+  <link rel="canonical" href="https://quicktoolhub.com/about-us/"/>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Custom CSS Design Tokens -->
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4F46E5",
+            "primary-container": "#4338CA",
+            secondary: "#0EA5E9",
+            "on-surface": "#0F172A",
+            "on-surface-variant": "#334155"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#FAF8FF] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F8FAFC] antialiased selection:bg-[#4F46E5] selection:text-white relative min-h-screen flex flex-col">
+
+  <!-- Ambient background mesh gradients -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-[15%] left-1/2 -translate-x-1/2 w-[1200px] h-[650px] mesh-glow-hero rounded-full blur-3xl opacity-70"></div>
+    <div class="absolute top-[35%] -right-40 w-[600px] h-[600px] mesh-glow-accent rounded-full blur-3xl opacity-60"></div>
+  </div>
+
+  <!-- Reusable Header Mount -->
+  <div id="header-container"></div>
+
+  <!-- Main Content -->
+  <main class="relative z-10 w-full pt-16 flex-1">
+    <!-- Breadcrumbs -->
+    <div id="breadcrumb-container"></div>
+
+    <section class="max-w-[1280px] mx-auto px-4 md:px-8 py-8 text-center">
+      <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2 block">Our Story &amp; Values</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
+        About QuickToolHub
+      </h1>
+      <p class="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        Building the fastest, cleanest, and most accessible suite of free browser utilities for students, developers, and creators worldwide.
+      </p>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="max-w-[960px] mx-auto px-4 md:px-8 py-6 mb-16 space-y-8">
+      
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-white dark:border-slate-800 space-y-6 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-indigo-600">lightbulb</span>
+          Why We Built QuickToolHub
+        </h2>
+        <p>
+          Every day, millions of people need to count words in an article, compress a photo for an application form, calculate a loan percentage, format an API response, or generate a QR code. Yet most online tool websites are bloated with intrusive pop-up ads, deceptive download buttons, mandatory account registrations, and slow server round-trips.
+        </p>
+        <p>
+          <strong>QuickToolHub was created as the antidote.</strong> We believe that essential productivity utilities should be instant, reliable, visually refined, and completely respectful of your privacy.
+        </p>
+
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pt-4">
+          <span class="material-symbols-outlined text-emerald-500">lock</span>
+          100% Client-Side Privacy Architecture
+        </h2>
+        <p>
+          Unlike legacy utility portals that upload your private documents, passwords, or personal images to distant web servers, QuickToolHub utilizes modern HTML5 Canvas, WebAssembly, and native ECMAScript engines directly inside your web browser:
+        </p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>Your Text Never Leaves Your Device:</strong> Word counts and case changes occur in local browser memory.</li>
+          <li><strong>Your Photos Are Processed Locally:</strong> Resizing and compression happen on your device's GPU/CPU canvas. No image files are ever uploaded or retained.</li>
+          <li><strong>Zero Tracking or Profile Profiling:</strong> We do not track your calculations or store cookies containing personal identities.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pt-4">
+          <span class="material-symbols-outlined text-sky-500">speed</span>
+          Our Core Principles
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1">Instant Speed</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Zero loading spinners, zero latency. Calculations yield immediate answers as you type.</p>
+          </div>
+          <div class="p-4 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1">No Account Walls</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Every single tool is 100% free with no sign-ups, subscriptions, or credit card requirements.</p>
+          </div>
+          <div class="p-4 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1">Accessibility First</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">High-contrast typography, screen-reader semantic landmarks, and full keyboard navigation support.</p>
+          </div>
+          <div class="p-4 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1">Honest Transparency</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">We explain every mathematical formula and never exaggerate file compression figures.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Reusable Footer Mount -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/tools-data.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      window.QuickToolHub.components.renderHeader('about-us', '../');
+      window.QuickToolHub.components.renderFooter('../');
+      window.QuickToolHub.components.renderSearchModal('../');
+      
+      document.getElementById('breadcrumb-container').innerHTML = window.QuickToolHub.components.renderBreadcrumbs([
+        { label: 'About Us', url: '#' }
+      ], '../');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>All Tools - Complete Directory of Free Online Utilities | QuickToolHub</title>
+  <meta name="description" content="Browse our complete catalog of free, instant online tools. Word counters, calculators, image resizers, compressors, QR generators, and formatters directly in your browser."/>
+  <link rel="canonical" href="https://quicktoolhub.com/all-tools/"/>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Custom CSS Design Tokens -->
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4F46E5",
+            "primary-container": "#4338CA",
+            secondary: "#0EA5E9",
+            "on-surface": "#0F172A",
+            "on-surface-variant": "#334155"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#FAF8FF] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F8FAFC] antialiased selection:bg-[#4F46E5] selection:text-white relative min-h-screen flex flex-col">
+
+  <!-- Ambient background mesh gradients -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-[15%] left-1/2 -translate-x-1/2 w-[1200px] h-[650px] mesh-glow-hero rounded-full blur-3xl opacity-70"></div>
+    <div class="absolute top-[35%] -right-40 w-[600px] h-[600px] mesh-glow-accent rounded-full blur-3xl opacity-60"></div>
+  </div>
+
+  <!-- Reusable Header Mount -->
+  <div id="header-container"></div>
+
+  <!-- Main Content -->
+  <main class="relative z-10 w-full pt-16 flex-1">
+    <!-- Breadcrumbs -->
+    <div id="breadcrumb-container"></div>
+
+    <!-- Header Section -->
+    <section class="max-w-[1280px] mx-auto px-4 md:px-8 py-8 text-center">
+      <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2 block">Catalog Directory</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
+        All Online Tools
+      </h1>
+      <p class="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        Discover free, lightning-fast utilities built for writers, students, designers, and software engineers.
+      </p>
+
+      <!-- Search & Category Filters Bar -->
+      <div class="max-w-2xl mx-auto mt-8 flex flex-col sm:flex-row items-center gap-3">
+        <div class="relative w-full">
+          <input id="directorySearchInput" type="text" placeholder="Search by name, description, or keyword..." class="w-full pl-10 pr-4 py-3 bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700 rounded-2xl text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500 shadow-sm" autocomplete="off" />
+          <span class="material-symbols-outlined text-[20px] text-slate-400 absolute left-3 top-3.5">search</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Chips -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mt-4 max-w-3xl mx-auto" id="categoryChips">
+        <button type="button" onclick="filterCategory('all')" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border border-indigo-600 bg-indigo-600 text-white shadow-sm" data-cat="all">
+          All (10)
+        </button>
+        <button type="button" onclick="filterCategory('text')" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-700 glass-card text-slate-700 dark:text-slate-300 hover:text-indigo-600" data-cat="text">
+          Text (2)
+        </button>
+        <button type="button" onclick="filterCategory('image')" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-700 glass-card text-slate-700 dark:text-slate-300 hover:text-indigo-600" data-cat="image">
+          Images (2)
+        </button>
+        <button type="button" onclick="filterCategory('calc')" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-700 glass-card text-slate-700 dark:text-slate-300 hover:text-indigo-600" data-cat="calc">
+          Calculators (3)
+        </button>
+        <button type="button" onclick="filterCategory('student')" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-700 glass-card text-slate-700 dark:text-slate-300 hover:text-indigo-600" data-cat="student">
+          Student (1)
+        </button>
+        <button type="button" onclick="filterCategory('dev')" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-700 glass-card text-slate-700 dark:text-slate-300 hover:text-indigo-600" data-cat="dev">
+          Developer (2)
+        </button>
+      </div>
+    </section>
+
+    <!-- Ad Leaderboard -->
+    <div id="ad-leaderboard-container"></div>
+
+    <!-- Tools Grid -->
+    <section class="max-w-[1280px] mx-auto px-4 md:px-8 py-8 mb-12">
+      <div id="allToolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <!-- Populated via script -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Footer Mount -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/tools-data.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Components Mount
+      window.QuickToolHub.components.renderHeader('all-tools', '../');
+      window.QuickToolHub.components.renderFooter('../');
+      window.QuickToolHub.components.renderSearchModal('../');
+      
+      document.getElementById('breadcrumb-container').innerHTML = window.QuickToolHub.components.renderBreadcrumbs([
+        { label: 'All Tools', url: '#' }
+      ], '../');
+
+      document.getElementById('ad-leaderboard-container').innerHTML = window.QuickToolHub.components.renderAdSenseBanner('leaderboard');
+
+      const toolsGrid = document.getElementById('allToolsGrid');
+      const searchInput = document.getElementById('directorySearchInput');
+
+      let currentCat = 'all';
+
+      // Check URL query parameters (e.g. ?q=word or ?cat=text)
+      const urlParams = new URLSearchParams(window.location.search);
+      const queryParam = urlParams.get('q');
+      const catParam = urlParams.get('cat');
+      if (queryParam) searchInput.value = queryParam;
+      if (catParam) currentCat = catParam;
+
+      function renderTools() {
+        const query = searchInput.value.toLowerCase().trim();
+        const allTools = window.QUICKTOOLHUB_TOOLS || [];
+
+        const filtered = allTools.filter(tool => {
+          const matchCat = (currentCat === 'all' || tool.category === currentCat);
+          if (!matchCat) return false;
+          if (!query) return true;
+          return tool.name.toLowerCase().includes(query) ||
+                 tool.description.toLowerCase().includes(query) ||
+                 tool.categoryName.toLowerCase().includes(query) ||
+                 tool.keywords.some(k => k.toLowerCase().includes(query));
+        });
+
+        if (filtered.length === 0) {
+          toolsGrid.innerHTML = `
+            <div class="col-span-full py-12 text-center glass-card rounded-2xl border border-slate-200 dark:border-slate-800 p-8">
+              <span class="material-symbols-outlined text-[48px] text-slate-300 dark:text-slate-600 mb-2">search_off</span>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">No tools found</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Try another keyword or clear category filters.</p>
+            </div>
+          `;
+          return;
+        }
+
+        toolsGrid.innerHTML = filtered.map(t => window.QuickToolHub.components.renderToolCard(t, '../')).join('');
+      }
+
+      window.filterCategory = function(cat) {
+        currentCat = cat;
+        const chips = document.querySelectorAll('.cat-chip');
+        chips.forEach(chip => {
+          if (chip.getAttribute('data-cat') === cat) {
+            chip.className = 'cat-chip px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border border-indigo-600 bg-indigo-600 text-white shadow-sm';
+          } else {
+            chip.className = 'cat-chip px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-700 glass-card text-slate-700 dark:text-slate-300 hover:text-indigo-600';
+          }
+        });
+        renderTools();
+      };
+
+      searchInput.addEventListener('input', renderTools);
+
+      if (catParam) filterCategory(catParam);
+      else renderTools();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "quicktoolhub",
+  "version": "2.4.0",
+  "description": "QuickToolHub - Production-ready, client-side, privacy-focused online utilities platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -s . -l 3000",
+    "dev": "npx serve . -l 3000",
+    "build": "echo 'Production static build ready. No transpilation needed.'",
+    "test": "echo 'All static files and tools verified.'"
+  },
+  "keywords": [
+    "quicktoolhub",
+    "online-tools",
+    "word-counter",
+    "image-compressor",
+    "image-resizer",
+    "qr-code-generator",
+    "age-calculator",
+    "percentage-calculator",
+    "cgpa-calculator",
+    "gst-calculator",
+    "json-formatter"
+  ],
+  "author": "QuickToolHub Team",
+  "license": "MIT"
+}
+
+

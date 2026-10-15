@@ -1,0 +1,8 @@
+# QuickToolHub Robots.txt
+# https://quicktoolhub.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://quicktoolhub.com/sitemap.xml
