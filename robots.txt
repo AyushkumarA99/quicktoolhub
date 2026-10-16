@@ -1,6 +1,8 @@
 # QuickToolHub Robots.txt
+# https://ayushkumara99.github.io/quicktoolhub/
 
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://ayushkumara99.github.io/quicktoolhub/sitemap.xml

@@ -7,7 +7,7 @@ window.QUICKTOOLHUB_CONFIG = {
   siteName: 'QuickToolHub',
   siteTagline: 'Free Online Tools for Everyday Tasks',
   siteDescription: 'Make your daily work easier with simple, fast, and free online tools. Word counters, image compressors, calculators, QR generators, and formatters directly in your browser.',
-  canonicalDomain: 'https://quicktoolhub.com', // Replace with your approved production domain
+  canonicalDomain: 'https://ayushkumara99.github.io/quicktoolhub',
   version: '2.4.0',
   contactEmail: 'support@quicktoolhub.com',
   
