@@ -9,7 +9,7 @@ window.QUICKTOOLHUB_CONFIG = {
   siteDescription: 'Make your daily work easier with simple, fast, and free online tools. Word counters, image compressors, calculators, QR generators, and formatters directly in your browser.',
   canonicalDomain: 'https://ayushkumara99.github.io/quicktoolhub',
   version: '2.4.0',
-  contactEmail: 'support@quicktoolhub.com',
+  contactEmail: 'ayushkushwaha70935@gmail.com',
   
   // Google AdSense Settings
   // IMPORTANT: Replace this placeholder with your approved AdSense Publisher ID (e.g., 'ca-pub-1234567890123456')
