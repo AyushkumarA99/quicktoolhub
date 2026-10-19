@@ -164,16 +164,6 @@
       document.getElementById('breadcrumb-container').innerHTML = window.QuickToolHub.components.renderBreadcrumbs([
         { label: 'Contact Us', url: '#' }
       ], '../');
-
-      const form = document.getElementById('contactForm');
-      const alertBox = document.getElementById('contactSuccessAlert');
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alertBox.classList.remove('hidden');
-        form.reset();
-        alertBox.scrollIntoView({ behavior: 'smooth' });
-      });
     });
   </script>
 </body>
