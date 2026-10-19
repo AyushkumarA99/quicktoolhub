@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ayushkumara99.github.io/quicktoolhub/sitemap.xml
+Sitemap: https://quicktoolhubayush.netlify.app/sitemap.xml
