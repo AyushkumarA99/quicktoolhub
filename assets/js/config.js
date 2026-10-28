@@ -1,6 +1,6 @@
 /**
  * QuickToolHub - Global Configuration
- * 
+ *
  * Keep domain, AdSense publisher ID, and metadata configurable in one central place.
  */
 window.QUICKTOOLHUB_CONFIG = {
@@ -10,15 +10,15 @@ window.QUICKTOOLHUB_CONFIG = {
   canonicalDomain: 'https://quicktoolhubayush.netlify.app',
   version: '2.4.0',
   contactEmail: 'ayushkushwaha70935@gmail.com',
-  
+
   // Google AdSense Settings
-  // IMPORTANT: Replace this placeholder with your approved AdSense Publisher ID (e.g., 'ca-pub-1234567890123456')
+  // Keep ads disabled in the app configuration until the site is approved.
   adsense: {
-    publisherId: 'ca-pub-XXXXXXXXXXXXXXXX',
-    enabled: false, // Set to true after your AdSense account is approved and verified
+    publisherId: 'ca-pub-2794771713110568',
+    enabled: false,
     testMode: true
   },
-  
+
   // Navigation & Category definitions
   categories: [
     { id: 'text', name: 'Text Tools', icon: 'description', color: 'indigo', count: 2 },
